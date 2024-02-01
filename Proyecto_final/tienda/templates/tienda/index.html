@@ -1,0 +1,17 @@
+{% extends 'tienda/base.html' %}
+ {% block contenido %}
+
+ <h1> Pagina principal</h1>
+    <div class="contenido">
+        <div class="columna">
+        <button><a href="{% url 'vendedor_list' %}">Ver Vendedores</a></button>
+        <button><a href="{% url 'vendedor_creat' %}">Crear Vendedores</a></button>
+        </div>
+    
+        <div class="columna">
+        <button><a href="{% url 'comprador_list' %}">Ver Comprador</a></button>
+        <button><a href="{% url 'comprador_creat' %}">Crear Comprador</a></button>
+        </div>
+    </div>
+ {% endblock contenido %}
+  

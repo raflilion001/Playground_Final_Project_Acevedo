@@ -1,0 +1,12 @@
+{% extends 'tienda/base.html' %}
+    {% block contenido %}
+    <center>
+    <h1> Creacion de nuevo Comprador </h1>
+    </center>
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Guardar</button>
+            <button><a href="{% url 'index' %}">Atras</a></button>
+        </form>
+    {% endblock contenido %}

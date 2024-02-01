@@ -1,0 +1,28 @@
+{% extends 'tienda/base.html' %}
+
+{% block contenido %}
+
+<center>
+    <h1> Lista de Vendedores</h1>
+ </center>
+        <table border="1">
+            <thead>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </thead>
+            <tbody>
+                {% for vendedor in vendedores  %}  
+                <tr>                     
+                      <td>  {{ vendedor.nombre }}</td> 
+                      <td> {{ vendedor.apellido }} </td> 
+                       <td> {{ vendedor.email }}</td> 
+                         <td>    <button>  
+                                <a href="{% url 'EliminarVendedor' vendedor.nombre %}">Eliminar</a>
+                            </button></td> 
+                    </tr> 
+                {% endfor %}
+            </tbody>
+        </table>
+    <button><a href="{% url 'index' %}">Atras</a></button>
+{% endblock contenido %}
