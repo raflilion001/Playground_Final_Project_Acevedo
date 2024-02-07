@@ -13,16 +13,16 @@
             </thead>
             <tbody>
                 {% for vendedor in vendedores  %}  
-                <tr>                     
+                    <tr>                     
                       <td>  {{ vendedor.nombre }}</td> 
                       <td> {{ vendedor.apellido }} </td> 
                        <td> {{ vendedor.email }}</td> 
-                         <td>    <button>  
+                       <td>    <button>  
                                 <a href="{% url 'EliminarVendedor' vendedor.nombre %}">Eliminar</a>
                             </button></td> 
                     </tr> 
                 {% endfor %}
             </tbody>
         </table>
-    <button><a href="{% url 'index' %}">Atras</a></button>
+    
 {% endblock contenido %}

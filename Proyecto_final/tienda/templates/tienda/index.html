@@ -1,17 +1,43 @@
+
+
 {% extends 'tienda/base.html' %}
+
+{% load static %}
+
  {% block contenido %}
 
  <h1> Pagina principal</h1>
-    <div class="contenido">
-        <div class="columna">
-        <button><a href="{% url 'vendedor_list' %}">Ver Vendedores</a></button>
-        <button><a href="{% url 'vendedor_creat' %}">Crear Vendedores</a></button>
-        </div>
+{% if mensaje %}
+ 
+    {{mensaje}}
     
-        <div class="columna">
-        <button><a href="{% url 'comprador_list' %}">Ver Comprador</a></button>
-        <button><a href="{% url 'comprador_creat' %}">Crear Comprador</a></button>
+{% endif  %}
+
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'tienda/imagen/mercado.jpg' %}" alt="..." /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">Ingrese al mercado</h1>
+          
+            <a class="btn btn-success" href="https:/wa.me/543815495052"target="_blank">Whatsap</a>
+            <a class="btn btn-primary" href="{% url 'crear_producto' %}" role="button">Vender</a>
+            <a class="btn btn-secondary" href="#" role="button">]Comprar</a>
+            <p></p>
         </div>
     </div>
+    <!-- Call to Action-->
+    <div class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+    </div>
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        
+        {% include 'tienda/tarjeta.html' with titulo="Tarjeta" texto="Texto de la tarjeta" %}
+        {% include 'tienda/tarjeta.html' %}
+        {% include 'tienda/tarjeta.html' %}
+        {% include 'tienda/tarjeta.html' %}
+        
+    </div>
+</div>
  {% endblock contenido %}
   
