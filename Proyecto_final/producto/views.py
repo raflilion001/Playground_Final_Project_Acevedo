@@ -40,12 +40,10 @@ class ProductoCategoriaCreate(CreateView):
     form_class = ProductoCategoriaForm 
     success_url = reverse_lazy('producto:productocategoria_list')                                                          
     template_name = 'producto/producto_categoria_create.html'    
-    
-    
+       
 # def productocategoria_detail(request, pk: int):
 #     consulta = ProductoCategoria.objects.get(id=pk)
 #     return render(request, "producto/producto_categoria_detalles.html", {"object": consulta})
-    
     
     
 class ProductoCategoriaDetail(DetailView):
@@ -53,3 +51,14 @@ class ProductoCategoriaDetail(DetailView):
     template_name = 'producto/producto_categoria_detalles.html'                          
     context_object_name = 'categoria'
     
+class ProductoCategoriaUpdate(UpdateView):
+    model = ProductoCategoria
+    form_class = ProductoCategoriaForm
+    success_url = reverse_lazy("producto:producto_categoria_list")
+    context_object_name = 'categoria'
+    template_name = 'producto/producto_categoria_create.html'
+class ProductoCategoriaDelete(DeleteView):
+    model = ProductoCategoria
+    success_url = reverse_lazy("producto:producto_categoria_list")   
+    context_object_name = 'categoria'
+    template_name = 'producto/producto_categoria_confirm_delete.html'

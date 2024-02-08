@@ -20,7 +20,10 @@
     <ul>
         <li>{{object.nombre}}
             
-        <a href="{% url 'producto:producto_categoria_detalles' object.id %}">Ver en detalle</a>     
+        <a href="{% url 'producto:producto_categoria_detalles' object.id %}">Ver en detalle</a>
+        <a href="{% url 'producto:producto_categoria_update' object.id %}">Editar</a>
+        <a href="{% url 'producto:producto_categoria_delete' object.id %}">Eliminar</a>
+
          </li>
     </ul>
 

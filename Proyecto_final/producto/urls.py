@@ -14,7 +14,10 @@ urlpatterns = [
     
     path('productocategoria/create/', views.ProductoCategoriaCreate.as_view(), name="producto_categoria_create"),
     
-     path('producto_categoria/detalles/<int:pk>/', views.ProductoCategoriaDetail.as_view(), name="producto_categoria_detalles"),
+    path('producto_categoria/detalles/<int:pk>/', views.ProductoCategoriaDetail.as_view(), name="producto_categoria_detalles"),
+    path('producto_categoria/update/<int:pk>/', views.ProductoCategoriaUpdate.as_view(), name="producto_categoria_update"),
+    path('producto_categoria/delete/<int:pk>/', views.ProductoCategoriaDelete.as_view(), name="producto_categoria_delete"),
+
 
 
 ]     

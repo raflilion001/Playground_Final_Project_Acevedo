@@ -1,0 +1,20 @@
+{% extends 'tienda/base.html' %}
+
+{% block title  %}
+    Eliminar de Categoria de Productos
+{% endblock title %}
+
+        {% block contenido %}
+
+            <h1>Eliminar de Categoria de Productos</h1>
+            <p class="fs-5 fst-italic" > Confirma eliminar {{categoria}}</p>
+
+            <form method="post"></form>
+
+                     {% csrf_token %}
+                        <div class="d-grid gap-3">
+
+                            <button type ="submit" class="btn btn-danger">Confirmar</button>
+                        </div>
+
+        {% endblock contenido %}
