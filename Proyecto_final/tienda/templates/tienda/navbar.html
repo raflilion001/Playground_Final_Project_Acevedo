@@ -12,8 +12,10 @@
                 <li class="nav-item"><a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{% url 'about' %}"> Nosotros </a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == '/vendedor/list' %}active{% endif %}"  href="{% url 'vendedor_list' %}">Lista de vendedores</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == '/vendedor/creat' %}active{% endif %}"  href="{% url 'vendedor_creat' %}">formulario de vendedores </a></li>
-               <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Panel de Administración</a></li>
-               <li><a class="nav-link {% if request.resolver_match.view_name == 'Registro' %}active{% endif %}" href="{% url 'Registro' %}">Registrar</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Panel de Administración</a></li>
+                <li><a class="nav-link {% if request.resolver_match.view_name == 'Registro' %}active{% endif %}" href="{% url 'Registro' %}">Registrar</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == '/productos/' %}active{% endif %}"  href="{% url 'producto:index' %}">formulario de vendedores </a></li>
+                 
             </ul>
         </div>
     </div>
