@@ -8,7 +8,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
                 <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %} " aria-current="page" href="{% url 'index' %}">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link {% if request.resolver_match.view_name == 'Login' %}active{% endif %}" href="{% url 'Login' %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.resolver_match.view_name == 'Login' %}active{% endif %}" href="{% url 'Login' %}">Inicio de sesión  </a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{% url 'about' %}"> Nosotros </a></li>
 
                 {% if user.is_authenticated %}
@@ -19,15 +19,11 @@
                 <li class="nav-item"><a class="nav-link {% if request.path == '/productos/' %}active{% endif %}"  href="{% url 'producto:index' %}">Productos </a></li>
                 <li class="nav-item">
                     
-                    
-
                     <form  action="{% url 'logout' %}" method="post">
                       {% csrf_token %}
-                      <button type="submit" class="btn btn-dark" >Logout</button>
+                      <button type="submit" class="btn btn-dark" >Salir </button>
                     </form>
                     </li>
-
-
 
                 {% endif %}
                 <li><a class="nav-link {% if request.resolver_match.view_name == 'Registro' %}active{% endif %}" href="{% url 'Registro' %}">Registrar</a></li>

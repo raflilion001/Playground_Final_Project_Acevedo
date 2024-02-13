@@ -13,7 +13,9 @@ from django.shortcuts import render, redirect
 
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Producto
-from .forms import ProductoForm
+from .forms import ProductoForm , CustomCreationForm
+
+
 
 
 def index(request):
@@ -103,13 +105,13 @@ def login_request(request):
 
 def registro(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = CustomCreationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data["username"]  # Accede al nombre de usuario correctamente
             form.save()
             return render(request, "tienda/index.html", {"mensaje": "Usuario creado: "})
     else:
-        form = UserCreationForm()
+        form = CustomCreationForm()
     return render(request, "tienda/registro.html", {"form": form})
 
 
