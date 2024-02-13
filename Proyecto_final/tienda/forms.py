@@ -3,6 +3,7 @@ from. import models
 from .models import Producto
 
 
+
 class VendedorForm(forms.ModelForm): 
     class Meta: 
         model = models.Vendedor

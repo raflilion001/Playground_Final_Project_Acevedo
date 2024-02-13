@@ -27,6 +27,7 @@ class ProductoCategoriaList(ListView):
     
     def get_queryset(self):
         if self.request.GET.get('consulta'):
+            
            consultar = self.request.GET.get('consulta')
            object_list =ProductoCategoria.objects.filter(nombre__icontains=consultar)
         else:

@@ -1,8 +1,9 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from tienda import views
-from .views import about, crear_producto
-
+from .views import *
+from django.views.generic.base import TemplateView
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
    
@@ -22,11 +23,6 @@ urlpatterns = [
     
     path('eliminarComprador/<comprador_nombre>',views.eliminar_comprador,name='EliminarComprador'),
     
-    #login
-    
-    path('login/', views.login_request, name='Login'),
-    
-    path('registro/', views.registro, name='Registro'),
     
     #path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     
@@ -35,5 +31,13 @@ urlpatterns = [
     #crear producto
     
     path('crear_producto/',views.crear_producto,name="crear_producto"),
+    
+    #login , logout, registro
+    
+    path('login/', views.login_request, name='Login'),
+    
+    path('registro/', views.registro, name='Registro'),
+    
+    path ("logout/", LogoutView.as_view(template_name="tienda/logout.html"), name="logout"),  
    
 ]

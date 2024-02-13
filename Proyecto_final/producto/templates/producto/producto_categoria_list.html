@@ -11,6 +11,7 @@
         <form action="{% url 'producto:productocategoria_list' %}" method="get">
             
             <input type="text" name="consulta" placeholder="Buscar...." >
+            
             <button type="submit">Buscar</button>
         </form>
     </div>
@@ -19,6 +20,7 @@
     {% for object in  object_list %}
 
     <ul>
+  
         <li>{{object.nombre}}
             
         <a href="{% url 'producto:producto_categoria_detalles' object.id %}">Ver en detalle</a>
@@ -26,6 +28,7 @@
         <a href="{% url 'producto:producto_categoria_delete' object.id %}">Eliminar</a>
 
          </li>
+
     </ul>
 
     {% endfor %}

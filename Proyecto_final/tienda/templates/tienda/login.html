@@ -1,19 +1,10 @@
 {% extends 'tienda/base.html' %}
-
 {% load static %} 
-
 {% block contenido %}
-
     <h1>Login</h1>
-
     <form  method="POST">
-
         {% csrf_token %}
            {{form.as_p}}
-
-         <button type="submit">Iniciar sesion</button> 
-
-        
-    </form>
-   
+         <button type="submit">Iniciar sesion</button>       
+    </form>   
 {% endblock contenido %}
