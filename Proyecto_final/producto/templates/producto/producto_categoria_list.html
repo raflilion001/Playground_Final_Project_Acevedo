@@ -1,6 +1,6 @@
 {% extends 'tienda/base.html' %}
 
-{% block title  %}
+{% block title %}
     Categoria de Productos
 {% endblock title %}
 
@@ -10,24 +10,26 @@
     <div class="d-grid gap-4">
         <form action="{% url 'producto:productocategoria_list' %}" method="get">
             
-            <input type="text" name="consulta" placeholder="Buscar...." >
+            <input type="text" name="consulta" placeholder="Buscar....">
             
-            <button type="submit">Buscar</button>
+            <button type="submit" class="btn btn-primary">Buscar</button> <!-- Botón con color azul -->
         </form>
     </div>
 
-
-    {% for object in  object_list %}
+    {% for object in object_list %}
 
     <ul>
-  
+ 
         <li>{{object.nombre}}
-            
-        <a href="{% url 'producto:producto_categoria_detalles' object.id %}">Ver en detalle</a>
-        <a href="{% url 'producto:producto_categoria_update' object.id %}">Editar</a>
-        <a href="{% url 'producto:producto_categoria_delete' object.id %}">Eliminar</a>
+        <div class="d-flex align-items-start"> <!-- Contenedor con clase d-flex para alinear los botones en la misma columna -->
 
-         </li>
+        <div class="btn-group" role="group" aria-label="Botones de acción"> <!-- Contenedor para alinear los botones -->
+
+        <a href="{% url 'producto:producto_categoria_detalles' object.id %}" class="btn btn-success me-2">Ver en detalle</a> <!-- Botón con color verde -->
+        <a href="{% url 'producto:producto_categoria_update' object.id %}" class="btn btn-warning me-2">Editar</a> <!-- Botón con color amarillo -->
+        <a href="{% url 'producto:producto_categoria_delete' object.id %}" class="btn btn-danger me-2">Eliminar</a> <!-- Botón con color rojo -->
+
+        </li>
 
     </ul>
 
